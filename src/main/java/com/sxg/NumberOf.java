@@ -2,7 +2,7 @@ package com.sxg;
 
 /**
  *  二进制中1的个数
- * @author shaoxiangen
+ * @author foreversxg
  * create in 2021/1/25
  */
 public class NumberOf {
