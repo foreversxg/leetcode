@@ -1,4 +1,4 @@
-package com.sxg.array;
+package com.sxg.greedy;
 
 /**
  * 给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。
@@ -31,6 +31,8 @@ public class SellStock2 {
      * 把求解的问题分成若干个子问题
      * 对每个子问题求解，得到子问题的局部最优解
      * 把子问题的解局部最优解合成原来问题的一个解
+     *
+     * 这里是把所有的正差价都计算进去
      *
      * @param prices
      * @return

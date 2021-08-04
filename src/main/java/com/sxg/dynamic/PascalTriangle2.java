@@ -1,4 +1,4 @@
-package com.sxg.array;
+package com.sxg.dynamic;
 
 import java.util.ArrayList;
 import java.util.List;
