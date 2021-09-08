@@ -59,7 +59,13 @@ BST(叉搜索树(Binary Search Tree))
  - 多次操作取最大值（买卖股票2）
  
  ### 堆
- - 最大堆
- - 最小堆
+ - 公式
+    - leftNo = parentNo*2+1
+    - rightNo = parentNo*2+2
+    - parentNo = (nodeNo-1)/2
+ - 大顶堆
+    - 每个子树的根节点都是这个子树的最大值
+ - 小顶堆
+    - 每个子树的根节点都是这个子树的最小值
 　　
    
