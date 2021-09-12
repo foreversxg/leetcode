@@ -32,6 +32,7 @@ public class SymmetricTree {
         if (left.val != right.val) {
             return false;
         }
+        // 每一层对称的节点进行比较
         return check(left.left, right.right) && check(left.right, right.left);
 
     }
