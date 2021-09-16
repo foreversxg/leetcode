@@ -12,9 +12,13 @@ package com.sxg.array;
  */
 public class MajorityElement {
 
+    public static void main(String[] args) {
+        new MajorityElement().majorityElement(new int[]{2, 2, 1, 3, 5});
+    }
+
     /**
      * Boyer-Moore 投票算法
-     *
+     * 前提是肯定得有一个多数
      * @param nums
      * @return
      */
