@@ -13,11 +13,16 @@ package com.sxg.array;
 public class MajorityElement {
 
     public static void main(String[] args) {
-        new MajorityElement().majorityElement(new int[]{2, 2, 1, 3, 5});
+        System.out.println(new MajorityElement().majorityElement(new int[]{2, 2, 2, 2, 1, 3, 5, 5}));
     }
 
     /**
      * Boyer-Moore 投票算法
+     *
+     * 数组共n个元素，假设最多元素x有m个，剩余元素k个  k=n-m
+     * 我们可以得出 m > k.根据这个结论得出如下算法
+     *
+     * 2221355  因为没有查过大于n/2的所以数组无效
      * 前提是肯定得有一个多数
      * @param nums
      * @return
