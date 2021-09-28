@@ -1,5 +1,7 @@
 package com.sxg.array;
 
+import com.sxg.Understand;
+
 /**
  * 多数元素
  * <p>
@@ -10,6 +12,8 @@ package com.sxg.array;
  * @author sxg
  * create in 2021/9/12
  */
+@Understand
+@Deprecated
 public class MajorityElement {
 
     public static void main(String[] args) {

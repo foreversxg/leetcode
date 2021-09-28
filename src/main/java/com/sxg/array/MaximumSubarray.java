@@ -1,5 +1,7 @@
 package com.sxg.array;
 
+import com.sxg.Understand;
+
 /**
  * 最大子序和
  * <p>
@@ -21,10 +23,15 @@ package com.sxg.array;
  * @author foreversxg
  * create in 2021/6/24
  */
+@Understand
 public class MaximumSubarray {
 
     public static void main(String[] args) {
-        int a = maxSubArray(new int[]{2, 1, -3, 4, -1, 2, 1, -5, 4});
+        int a = maxSubArray(new int[]{-2, -1, -3, 4, -1, 2, 1, -5, 4});
+        int a1 = maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        int a2 = maxSubArray(new int[]{-2, 1, -3});
+
+
         int b = maxSubArray(new int[]{-5});
 
         System.out.println(a);
@@ -41,6 +48,9 @@ public class MaximumSubarray {
         int currentEndMax = 0;
         int realMax = nums[0];
         for (int n : nums) {
+            // f(n)表示以n为为结束点！！！的连续数组最大和，但是起点并不一定是0
+            // 例如 2-> n  亦或者是   5-> n
+            // 理解这一步很关键，这一步理解了后面就水到渠成
             currentEndMax = Math.max(currentEndMax + n, n);
             // 在整个数组内，最大连续数组和->  f(1),f(2)...f(n)中的最大值
             realMax = Math.max(currentEndMax, realMax);
