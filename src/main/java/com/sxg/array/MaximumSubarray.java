@@ -50,6 +50,7 @@ public class MaximumSubarray {
         for (int n : nums) {
             // f(n)表示以n为为结束点！！！的连续数组最大和，但是起点并不一定是0
             // 例如 2-> n  亦或者是   5-> n
+            // f(i+1) 表示以i+1为结束点的最大和，那么既然连续则可以继承f(i),但是如果此时f(n)是负数或0，则不对于总和提高无效，于是此时直接取num[i+1]作为f(i+1)的值
             // 理解这一步很关键，这一步理解了后面就水到渠成
             currentEndMax = Math.max(currentEndMax + n, n);
             // 在整个数组内，最大连续数组和->  f(1),f(2)...f(n)中的最大值
