@@ -1,5 +1,7 @@
 package com.sxg.array;
 
+import com.sxg.Understand;
+
 /**
  * 搜索插入位置
  * <p>
@@ -20,6 +22,7 @@ package com.sxg.array;
  * @author foreversxg
  * create in 2021/6/23
  */
+@Understand
 public class SearchInsertPosition {
 
     public static void main(String[] args) {
@@ -34,6 +37,7 @@ public class SearchInsertPosition {
         int left = 0;
         int right = nums.length - 1;
         // 等于是为了处理target在两相邻数之间
+        // left right也可以被理解成双指针
         while (left <= right) {
             int mid = (left + right) / 2;
             if (nums[mid] == target) {

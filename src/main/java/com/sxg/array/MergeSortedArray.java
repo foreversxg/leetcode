@@ -1,5 +1,7 @@
 package com.sxg.array;
 
+import com.sxg.Understand;
+
 /**
  * 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。
  * <p>
@@ -19,11 +21,14 @@ package com.sxg.array;
  * @author foreversxg
  * create in 2021/6/28
  */
+@Deprecated
+@Understand
 public class MergeSortedArray {
 
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        // 策略，逆向双指针,利用有序的特性，将最大值搬运到数组的最后
+        // 策略，逆向双指针,利用有序的特性，将最大值搬运到数组的最后 ！！！
+        // 从最后一位开始逆排序，这样可以简化从头排序的复杂度，正好条件中对num1的长度说明也印证了可行性。
         int index = nums1.length - 1;
         while (m > 0 || n > 0) {
             // 先考虑m==0 或者 n==0的临界条件

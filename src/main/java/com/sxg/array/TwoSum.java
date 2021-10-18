@@ -28,6 +28,7 @@ import java.util.Map;
  * @author foreversxg
  * create in 2021/6/21
  */
+@Deprecated
 public class TwoSum {
 
     public static void main(String[] args) {

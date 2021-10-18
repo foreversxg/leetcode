@@ -50,6 +50,7 @@ package com.sxg.array;
  * @author foreversxg
  * create in 2021/6/22
  */
+@Deprecated
 public class RemoveElement {
 
     public static void main(String[] args) {
@@ -59,6 +60,13 @@ public class RemoveElement {
 
     }
 
+    /**
+     * 双指针
+     *
+     * @param nums
+     * @param val
+     * @return
+     */
     public static int removeElement(int[] nums, int val) {
 
         int slowIndex = 0;

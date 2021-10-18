@@ -24,6 +24,7 @@ import com.sxg.Understand;
  * create in 2021/6/24
  */
 @Understand
+@Deprecated
 public class MaximumSubarray {
 
     public static void main(String[] args) {

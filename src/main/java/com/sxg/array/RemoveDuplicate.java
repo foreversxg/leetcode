@@ -1,5 +1,7 @@
 package com.sxg.array;
 
+import com.sxg.Understand;
+
 /**
  * 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
  * <p>
@@ -28,6 +30,8 @@ package com.sxg.array;
  * @author foreversxg
  * create in 2021/6/22
  */
+@Understand
+@Deprecated
 public class RemoveDuplicate {
 
     public static void main(String[] args) {
@@ -37,6 +41,12 @@ public class RemoveDuplicate {
         System.out.println(res);
     }
 
+    /**
+     * 双指针
+     *
+     * @param nums
+     * @return
+     */
     public static int removeDuplicates(int[] nums) {
         int slowIndex = 0;
         for (int fastIndex = 1; fastIndex < nums.length; fastIndex++) {

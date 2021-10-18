@@ -10,6 +10,7 @@ package com.sxg.dynamic;
  * @author sxg
  * create in 2021/8/3
  */
+@Deprecated
 public class FibonacciNumber {
 
     public int fib(int n) {

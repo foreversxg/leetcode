@@ -19,6 +19,7 @@ package com.sxg.bit;
  * @author foreversxg
  * create in 2021/7/2
  */
+@Deprecated
 public class SingleNumber {
 
     public static void main(String[] args) {
