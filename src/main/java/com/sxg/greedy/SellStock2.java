@@ -1,5 +1,7 @@
 package com.sxg.greedy;
 
+import com.sxg.Understand;
+
 /**
  * 给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。
  * <p>
@@ -19,10 +21,13 @@ package com.sxg.greedy;
  * @author foreversxg
  * create in 2021/7/1
  */
+@Understand
 public class SellStock2 {
 
     public static void main(String[] args) {
-        int a = maxProfit(new int[]{7, 1, 5, 3, 6, 4});
+//        int a = maxProfit(new int[]{7, 1, 5, 3, 6, 4});
+//        int a = maxProfit(new int[]{1, 2, 5, 3, 6, 4});
+        int a = maxProfit(new int[]{1, 3, 2, 5, 3, 6, 4});
         System.out.println(a);
     }
 
@@ -40,6 +45,11 @@ public class SellStock2 {
     public static int maxProfit(int[] prices) {
         int maxEarn = 0;
         for (int i = 1; i < prices.length; i++) {
+            /**
+             * 将数组分成多个连续递增的子数组，这些连续的子数组阶梯和就是最大收益
+             * [1, 2, 5, 3, 6, 4,5]  比如1，2，5，3 这个区间，最大收益肯定是5-1=4.但是在1，2，5这个连续区间，用prices[i] - prices[i - 1]累计依然是4
+             * 上面这个数组可以分成几个小段处理  [1,2,5] [3,6] [4,5],每一个段都是递增的，每一段的落差和就是最大收益！！！
+             */
             int res = prices[i] - prices[i - 1];
             if (res > 0) {
                 maxEarn = maxEarn + res;

@@ -11,6 +11,7 @@ import java.util.List;
  * @author foreversxg
  * create in 2021/7/5
  */
+@Deprecated
 public class BinaryTreePreorderTraversal {
 
     public List<Integer> preorderTraversal(TreeNode root) {

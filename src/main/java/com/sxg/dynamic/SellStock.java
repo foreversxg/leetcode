@@ -1,5 +1,7 @@
 package com.sxg.dynamic;
 
+import com.sxg.Understand;
+
 /**
  *
  * 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
@@ -21,6 +23,7 @@ package com.sxg.dynamic;
  * @author foreversxg
  * create in 2021/7/1
  */
+@Understand
 public class SellStock {
 
     public static void main(String[] args) {
@@ -33,6 +36,7 @@ public class SellStock {
         int maxEarn = 0;
         for (int i = 0; i < prices.length; i++) {
             maxEarn = Math.max(maxEarn, prices[i] - minPrice);
+            // 寻找最小值，并更新之
             minPrice = Math.min(minPrice, prices[i]);
         }
         return maxEarn;
