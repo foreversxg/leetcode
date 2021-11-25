@@ -39,13 +39,17 @@ public class MidPostBuildTree {
 
     private TreeNode rebuild(int left, int right) {
 
+        // 递归结束条件
         if (left > right) {
             return null;
         }
+        // 后续遍历的最后一个节点就是根节点
         TreeNode root = new TreeNode(postorder[index]);
+        // 找到根节点在中序遍历数组中的位置，然后根据这个位置将中序遍历数组切分为左右子树
         int midIndex = map.get(postorder[index]);
         index--;
         // 先处理右子树，因为后序遍历是先左后右，所以在倒序寻找根节点的时候一定是先到右子树的根节点
+        // 先从右边主要是考虑用index--在后续遍历中寻找子树的根节点
         root.right = rebuild(midIndex + 1, right);
         root.left = rebuild(left, midIndex - 1);
         return root;

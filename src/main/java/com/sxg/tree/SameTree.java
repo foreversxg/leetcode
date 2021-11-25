@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 /**
@@ -14,6 +15,7 @@ import com.sxg.base.TreeNode;
  * @author sxg
  * create in 2021/7/14
  */
+@Understand
 public class SameTree {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {

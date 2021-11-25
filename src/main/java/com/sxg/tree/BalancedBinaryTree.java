@@ -20,7 +20,7 @@ public class BalancedBinaryTree {
         if (root == null) {
             return true;
         }
-        // 注意是每个子树都是平衡二叉树
+        // 注意是每个子树都得是平衡二叉树
         return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
     }
 
