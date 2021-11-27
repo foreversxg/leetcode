@@ -1,4 +1,4 @@
-package com.sxg;
+package com.sxg.sort;
 
 /**
  * @author sxg

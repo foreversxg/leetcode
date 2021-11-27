@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 /**
@@ -12,6 +13,7 @@ import com.sxg.base.TreeNode;
  * @author sxg
  * create in 2021/7/21
  */
+@Understand
 public class MaximumDepthBinaryTree {
 
     public int maxDepth(TreeNode root) {

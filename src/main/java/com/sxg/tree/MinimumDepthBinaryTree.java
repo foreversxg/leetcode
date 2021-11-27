@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 import java.util.LinkedList;
@@ -15,6 +16,7 @@ import java.util.Queue;
  * @author sxg
  * create in 2021/7/26
  */
+@Understand
 public class MinimumDepthBinaryTree {
 
 

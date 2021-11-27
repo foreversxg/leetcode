@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 /**
@@ -11,6 +12,7 @@ import com.sxg.base.TreeNode;
  * @author sxg
  * create in 2021/8/17
  */
+@Understand
 public class FlattenBinaryTreeToLinkedList {
 
     public void flatten(TreeNode root) {
@@ -18,18 +20,20 @@ public class FlattenBinaryTreeToLinkedList {
         if (root == null) {
             return;
         }
-
+        // 先完成各子树的展开，然后再用root关联
+        //    左子树链表  -> root.val -> 右子树链表
         flatten(root.left);
         flatten(root.right);
+
         TreeNode left = root.left;
         TreeNode right = root.right;
-        root.right = left;
+        root.right = left; //因为是前序遍历 把左节点直接放在 链表下个节点
         root.left = null;
         TreeNode pointer = root;
         while (pointer.right != null) {
             pointer = pointer.right;
         }
-        pointer.right = right;
+        pointer.right = right; // 右节点要连接到到左子树生成的链表尾部
     }
 
 }

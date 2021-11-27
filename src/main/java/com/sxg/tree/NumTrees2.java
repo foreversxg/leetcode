@@ -20,6 +20,14 @@ public class NumTrees2 {
         return createTree(1, n);
     }
 
+    /**
+     * 1、后序遍历
+     * 2、递归终止条件
+     *
+     * @param start
+     * @param end
+     * @return
+     */
     private List<TreeNode> createTree(int start, int end) {
         List<TreeNode> result = new ArrayList<>();
         if (start > end) {
@@ -31,6 +39,7 @@ public class NumTrees2 {
             // 这里是一个后序遍历的逻辑，通过先得出左右两颗子树的节点，然后和当前节点拼接成一颗新的子树
             List<TreeNode> leftTree = createTree(start, i - 1);
             List<TreeNode> rightTree = createTree(i + 1, end);
+            // 以i为根节点 左右子树了集合两两组合
             for (TreeNode left : leftTree) {
                 for (TreeNode right : rightTree) {
                     TreeNode currentRoot = new TreeNode(i);

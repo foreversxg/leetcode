@@ -20,8 +20,10 @@ public class BalancedBinaryTree {
         if (root == null) {
             return true;
         }
-        // 注意是每个子树都得是平衡二叉树
-        return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+        // 每一个节点的左右两侧高度平衡
+        return Math.abs(height(root.left) - height(root.right)) <= 1
+                // 注意是每个子树都得是平衡二叉树
+                && isBalanced(root.left) && isBalanced(root.right);
     }
 
     private Integer height(TreeNode root) {

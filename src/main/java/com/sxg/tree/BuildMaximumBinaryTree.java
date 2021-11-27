@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 /**
@@ -13,6 +14,7 @@ import com.sxg.base.TreeNode;
  * @author sxg
  * create in 2021/8/23
  */
+@Understand
 public class BuildMaximumBinaryTree {
 
     public TreeNode constructMaximumBinaryTree(int[] nums) {

@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
  * @author sxg
  * create in 2021/9/5
  */
+@Understand
 public class LevelOrder {
 
 
@@ -35,8 +37,9 @@ public class LevelOrder {
         if (root == null) {
             return;
         }
+        // 每一层初始化一个集合  当前遍历的层次用于归集到同一个数组
         if (index >= result.size()) {
-            result.add(index, new ArrayList<Integer>());
+            result.add(index, new ArrayList<>());
         }
         List<Integer> list = result.get(index);
         list.add(root.val);

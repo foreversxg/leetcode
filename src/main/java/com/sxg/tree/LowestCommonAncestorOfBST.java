@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 import java.util.ArrayList;
@@ -13,13 +14,26 @@ import java.util.List;
  * @author sxg
  * create in 2021/8/1
  */
+@Understand
 public class LowestCommonAncestorOfBST {
 
+
+    /**
+     * 前提是搜索树！！！
+     * 1、取root节点到两个给定节点的链路
+     * 2、逐一比对链路，最后一个相等的节点就是最近公共祖先
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         List<TreeNode> listP = getPath(root, p);
         List<TreeNode> listq = getPath(root, q);
         TreeNode ancestor = null;
         for (int i = 0; i < listP.size() && i < listq.size(); ++i) {
+            // root到各个节点第一个不相等的时候，上一个节点就是最近公共祖先
             if (listP.get(i) == listq.get(i)) {
                 ancestor = listP.get(i);
                 continue;
@@ -30,6 +44,13 @@ public class LowestCommonAncestorOfBST {
         return ancestor;
     }
 
+    /**
+     * 返回root节点到对应节点的链路
+     *
+     * @param root
+     * @param target
+     * @return
+     */
     public List<TreeNode> getPath(TreeNode root, TreeNode target) {
 
         List<TreeNode> path = new ArrayList<TreeNode>();
@@ -37,6 +58,7 @@ public class LowestCommonAncestorOfBST {
         TreeNode node = root;
         while (node != target) {
             path.add(node);
+            // 大于target则取左边子树，小于则取右边子树，等于则表示就是target自身了
             if (target.val < node.val) {
                 node = node.left;
             } else {

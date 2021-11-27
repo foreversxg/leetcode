@@ -1,5 +1,6 @@
 package com.sxg.tree;
 
+import com.sxg.Understand;
 import com.sxg.base.TreeNode;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.Map;
  * @author sxg
  * create in 2021/9/5
  */
+@Understand
 public class MidPostBuildTree {
 
     private int[] inorder;

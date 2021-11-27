@@ -8,7 +8,7 @@ public class ListNode<K, V> {
 
     private K key;
     private V value;
-    private ListNode<K, V> pre, next;
+    public ListNode<K, V> pre, next;
 
     public ListNode(K key, V value) {
         this.key = key;
