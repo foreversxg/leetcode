@@ -6,9 +6,13 @@ package com.sxg.base;
  */
 public class ListNode<K, V> {
 
-    private K key;
-    private V value;
+    public K key;
+    public V value;
     public ListNode<K, V> pre, next;
+
+    public ListNode(V value) {
+        this.value = value;
+    }
 
     public ListNode(K key, V value) {
         this.key = key;

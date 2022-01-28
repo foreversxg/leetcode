@@ -11,7 +11,8 @@ import java.util.PriorityQueue;
 public class LeastNumbers {
 
     public static void main(String[] args) {
-
+        int[] array = new LeastNumbers().getLeastNumbers(new int[]{1, 3, 2, 6, 4, 5}, 3);
+        System.out.println(array);
     }
 
     public int[] getLeastNumbers(int[] arr, int k) {
