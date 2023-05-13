@@ -2,7 +2,6 @@ package com.sxg.tree;
 
 import com.sxg.Understand;
 import com.sxg.base.TreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -36,6 +35,7 @@ public class MinimumDepthBinaryTree {
         }
         // 走到这里，当前的节点就不算叶子节点，因为它有至少一个子节点
         int min = Integer.MAX_VALUE;
+        // todo 这样是不是更合适？  min = Math.min(minDepth_dfs(root.left), minDepth_dfs(root.right));
         if (root.left != null) {
             min = Math.min(minDepth_dfs(root.left), min);
         }

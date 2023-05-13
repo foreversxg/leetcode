@@ -14,6 +14,7 @@ import com.sxg.base.TreeNode;
  * create in 2021/7/21
  */
 @Understand
+@Deprecated
 public class MaximumDepthBinaryTree {
 
     public int maxDepth(TreeNode root) {

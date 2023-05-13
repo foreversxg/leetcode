@@ -65,7 +65,7 @@ public class LRUCache {
     }
 
     private void moveToHead(LinkedNode node) {
-        // 分为两步，先移除所在位置，然后插入到队列头部
+        // 分为两步，先移除所在位置，然后插入到队列头部 todo
         removeNode(node);
         addToHead(node);
     }

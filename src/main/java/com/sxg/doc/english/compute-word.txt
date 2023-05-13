@@ -1,0 +1,5 @@
+laptop  笔记本电脑
+desktop 台式机
+syntax  语法
+scripting languages 脚本语言
+concurrency 并发

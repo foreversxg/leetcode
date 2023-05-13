@@ -11,7 +11,7 @@ import java.util.Stack;
 public class ValidParentheses {
 
     public static void main(String[] args) {
-        boolean res = solution("{}]");
+        boolean res = solution("{}[]");
         System.out.println(res);
     }
 
@@ -21,6 +21,7 @@ public class ValidParentheses {
         }
         int length = str.length();
         Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+            // todo char类型要用单引号
             put(')', '(');
             put(']', '[');
             put('}', '{');
@@ -29,6 +30,7 @@ public class ValidParentheses {
         for (int i = 0; i < length; i++) {
             char ch = str.charAt(i);
             if (pairs.containsKey(ch)) {
+                //todo  要用stack.peek()的值和map的value 做对比，不是ch
                 if (stack.isEmpty() || pairs.get(ch) != stack.peek()) {
                     return false;
                 }

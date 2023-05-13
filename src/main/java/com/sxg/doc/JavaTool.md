@@ -1,0 +1,9 @@
+- 常用java基础函数
+- 字符
+    - Character.isLetterOrDigit
+    - Character.toLowerCase
+    - String.charAt
+- 数字
+    - Math.sqrt 平方根
+    - Math.max
+    - Math.min

@@ -13,6 +13,12 @@ package com.sxg.dynamic;
 @Deprecated
 public class FibonacciNumber {
 
+
+    public static void main(String[] args) {
+        System.out.println(new FibonacciNumber().fib(10));
+        System.out.println(calc2(10));
+    }
+
     /**
      * 时间复杂度O(2^n)
      * 空间复杂度O(1)
@@ -28,6 +34,19 @@ public class FibonacciNumber {
             return 1;
         }
         return fib(n - 1) + fib(n - 2);
+    }
+
+    // 未测试
+    public static int calc2(int n) {
+        int f1 = 0;
+        int f2 = 1;
+        int tmp = 0;
+        for (int i = 2; i <= n; i++) {
+            tmp = f2;
+            f2 = f1 + f2;
+            f1 = tmp;
+        }
+        return f2;
     }
 
     /**

@@ -26,29 +26,50 @@ import com.sxg.Understand;
  * create in 2021/6/27
  */
 @Understand
+@Deprecated
 public class PlusOne {
     public static void main(String[] args) {
         int[] a = new PlusOne().plusOne(new int[]{9});
-        System.out.println(new PlusOne().plusOne(new int[]{1, 2, 3}));
+        int[] res = new PlusOne().plusOne(new int[]{9, 9, 9});
+        System.out.println(res);
     }
 
     public int[] plusOne(int[] digits) {
         int index = digits.length - 1;
         int up = 1;
         while (index >= 0) {
-            int oldValue = digits[index];
-            digits[index] = (oldValue + up) % 10;
-            up = (oldValue + up) / 10;
-            if (up != 1) {
-                // 不需要进位可以直接返回该数组
+
+            int sum = digits[index] + up; // todo
+            digits[index] = sum % 10;
+            up = sum / 10;
+            if (up == 0) {
                 return digits;
             }
             index--;
         }
-        // 需要进位，因为是+1，则肯定结果是一个1后面补0
         digits = new int[digits.length + 1];
         digits[0] = 1;
         return digits;
     }
+
+
+//    public int[] plusOne(int[] digits) {
+//        int index = digits.length - 1;
+//        int up = 1;
+//        while (index >= 0) {
+//            int oldValue = digits[index];
+//            digits[index] = (oldValue + up) % 10;
+//            up = (oldValue + up) / 10;
+//            if (up != 1) {
+//                // 不需要进位可以直接返回该数组
+//                return digits;
+//            }
+//            index--;
+//        }
+//        // 需要进位，因为是+1，则肯定结果是一个1后面补0
+//        digits = new int[digits.length + 1];
+//        digits[0] = 1;
+//        return digits;
+//    }
 
 }

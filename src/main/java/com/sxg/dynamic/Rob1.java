@@ -9,6 +9,7 @@ package com.sxg.dynamic;
  * @author sxg
  * create in 2021/11/26
  */
+@Deprecated
 public class Rob1 {
 
     public int rob(int[] nums) {

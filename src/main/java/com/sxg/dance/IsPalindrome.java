@@ -16,7 +16,12 @@ import java.util.List;
 public class IsPalindrome {
 
     // 也可以使用翻转链表的方式来处理
-    // 通过
+
+    /**
+     * 问题分解
+     * 1.构造一个对称的结构
+     * 2.收尾对比
+     */
 
 
     /**
@@ -39,7 +44,7 @@ public class IsPalindrome {
         }
         int start = 0;
         int end = list.size() - 1;
-        while (start < end) {
+        while (start < end) { // todo 推出条件
             if (list.get(start).getValue() != list.get(end).getValue()) {
                 return false;
             }

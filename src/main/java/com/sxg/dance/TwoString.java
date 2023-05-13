@@ -1,13 +1,24 @@
 package com.sxg.dance;
 
+import com.sxg.Understand;
+
 /**
  * 415. 字符串相加
  *
- * @author sxg
- * create in 2021/12/1
+ * @author sxg create in 2021/12/1
  */
+@Understand
+@Deprecated
 public class TwoString {
 
+    /**
+     * 问题分解
+     * <p>1、每一个对等位相加 （位置同步移动）
+     * <p>2、考虑进位
+     * 注意 ： 字符转int需要 char-'0'
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int a = '8';
         int b = '8' - '0';

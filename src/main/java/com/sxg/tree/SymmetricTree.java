@@ -14,6 +14,10 @@ public class SymmetricTree {
 
     /**
      * 思路：这里的对称不能通过简单的分治处理，并不需要每个子树都是对称的，只要整树左右对称即可
+     * <p>
+     * 1、左右节点值相同
+     * <p>
+     * 2.左右子树每个节点相同
      *
      * @param root
      * @return
@@ -34,7 +38,7 @@ public class SymmetricTree {
         if (left.val != right.val) {
             return false;
         }
-        // 每一层对称的节点进行比较
+        // todo 每一层对称的节点进行比较
         return check(left.left, right.right) && check(left.right, right.left);
 
     }

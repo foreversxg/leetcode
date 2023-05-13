@@ -9,6 +9,7 @@ import com.sxg.Understand;
  * create in 2021/7/6
  */
 @Understand
+@Deprecated
 public class NumberOfOneBit {
 
     public int hammingWeight(int n) {

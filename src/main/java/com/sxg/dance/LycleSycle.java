@@ -16,6 +16,12 @@ import com.sxg.base.ListNode;
  */
 public class LycleSycle {
 
+    /**
+     * 问题分解
+     *  1.快慢指针
+     *  2.退出条件
+     */
+
 
     /**
      * 时间复杂度：O(N)O(N)，其中 NN 是链表中的节点数。
@@ -37,7 +43,7 @@ public class LycleSycle {
         ListNode slow = head;
         ListNode fast = head.next.next; // 这里快指针初始化就要移动，不然会影响下面等式判断
         while (slow != fast) {
-            if (fast == null || fast.next == null) {
+            if (fast == null || fast.next == null) { // why
                 return false;
             }
             slow = slow.next;

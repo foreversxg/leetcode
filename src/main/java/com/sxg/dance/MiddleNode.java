@@ -1,5 +1,6 @@
 package com.sxg.dance;
 
+import com.sxg.Understand;
 import com.sxg.base.ListNode;
 
 /**
@@ -11,6 +12,8 @@ import com.sxg.base.ListNode;
  * @author sxg
  * create in 2021/11/27
  */
+@Understand
+@Deprecated
 public class MiddleNode {
 
 
@@ -27,7 +30,8 @@ public class MiddleNode {
     public ListNode middleNode(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
-        while (fast != null && fast.next != null) {
+        // 这里应该是没有环的情况，是否要先声明
+        while (fast != null && fast.next != null) { // todo 这个条件是重点，防止npe
             slow = slow.next;
             fast = fast.next.next;
         }

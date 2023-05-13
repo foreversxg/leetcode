@@ -20,7 +20,7 @@ public class Rob2 {
         if (nums.length == 2) {
             return Math.max(nums[0], nums[1]);
         }
-        return Math.max(doRob(nums, 0, nums.length - 2), doRob(nums, 1, nums.length - 1));
+        return Math.max(doRob(nums, 0, nums.length - 2), doRob(nums, 1, nums.length - 1)); // todo
     }
 
     public int doRob(int[] nums, int left, int right) {

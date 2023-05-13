@@ -2,7 +2,6 @@ package com.sxg.tree;
 
 import com.sxg.Understand;
 import com.sxg.base.TreeNode;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class MidPostBuildTree {
         this.inorder = inorder;
         this.postorder = postorder;
         for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i], i);
+            map.put(inorder[i], i); // 不会有重复的节点？？？
         }
         index = inorder.length - 1;
         return rebuild(0, index);
@@ -50,7 +49,7 @@ public class MidPostBuildTree {
         // 找到根节点在中序遍历数组中的位置，然后根据这个位置将中序遍历数组切分为左右子树
         int midIndex = map.get(postorder[index]);
         index--;
-        // 先处理右子树，因为后序遍历是先左后右，所以在倒序寻找根节点的时候一定是先到右子树的根节点
+        // todo 先处理右子树，因为后序遍历是先左后右，所以在倒序寻找根节点的时候一定是先到右子树的根节点
         // 先从右边主要是考虑用index--在后续遍历中寻找子树的根节点
         root.right = rebuild(midIndex + 1, right);
         root.left = rebuild(left, midIndex - 1);

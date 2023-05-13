@@ -51,7 +51,7 @@ package com.sxg.array;
  * create in 2021/6/22
  */
 @Deprecated
-public class RemoveElement {
+public class RemoveSpecialElement {
 
     public static void main(String[] args) {
         int a = removeElement(new int[]{3, 2, 2, 3}, 3);
@@ -60,23 +60,26 @@ public class RemoveElement {
 
     }
 
-    /**
-     * 双指针
-     *
-     * @param nums
-     * @param val
-     * @return
-     */
     public static int removeElement(int[] nums, int val) {
-
-        int slowIndex = 0;
-        for (int fastIndex = 0; fastIndex < nums.length; fastIndex++) {
-            if (nums[fastIndex] == val) {
-                continue;
-            }
-            nums[slowIndex++] = nums[fastIndex];
-        }
-        // 每次执行完都会前进一位，所以这里正好等于数组长度
-        return slowIndex;
+        return 0;
     }
+//    /**
+//     * 双指针
+//     *
+//     * @param nums
+//     * @param val
+//     * @return
+//     */
+//    public static int removeElement(int[] nums, int val) {
+//
+//        int slowIndex = 0;
+//        for (int fastIndex = 0; fastIndex < nums.length; fastIndex++) {
+//            if (nums[fastIndex] == val) {
+//                continue;
+//            }
+//            nums[slowIndex++] = nums[fastIndex];
+//        }
+//        // 每次执行完都会前进一位，所以这里正好等于数组长度
+//        return slowIndex;
+//    }
 }

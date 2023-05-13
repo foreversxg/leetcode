@@ -15,8 +15,19 @@ public class PalindromeNumber {
         System.out.println(isPalindrome(123221));
         System.out.println(isPalindrome(123321));
         System.out.println(isPalindrome(0));
+//        String a = "".substring();
     }
 
+    /**
+     * 问题分解
+     * <p>
+     * 1、负数、10的整数倍数且不是0的数肯定不是
+     * <p>
+     * 2、以中间数字为中心分隔，左边取反。进行比对
+     *
+     * @param x
+     * @return
+     */
     public static boolean isPalindrome(int x) {
 
         if (x < 0 || (x % 10 == 0 && x != 0)) {
@@ -27,7 +38,7 @@ public class PalindromeNumber {
             reverse = reverse * 10 + x % 10;
             x /= 10;
         }
-        // x为奇数时 reverse需要/10
+        // todo   x为奇数时 reverse需要/10
         return x == reverse || x == reverse / 10;
     }
 }

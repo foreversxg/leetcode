@@ -10,7 +10,37 @@ package com.sxg.dance;
  * @author sxg
  * create in 2021/11/28
  */
+@Deprecated
 public class FindLengthOfLCIS {
+
+    /**
+     * 问题分解
+     * 1、识别所有连续递增的子序列
+     * 2、找出最长的子序列
+     */
+    public static void main(String[] args) {
+        int[] nums = {4, 2, 6, 3, 5, 9, 7, 8};
+        System.out.println(findLengthOfLCIS(nums));
+        System.out.println(findLengthOfLCIS2(nums));
+
+    }
+
+
+    public static int findLengthOfLCIS2(int[] nums) {
+
+        int max = 0;
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                count++;
+            } else {
+                max = Math.max(max, count);
+                count = 0;
+            }
+        }
+        return max;
+    }
+
 
     /**
      * 贪心算法
@@ -18,16 +48,16 @@ public class FindLengthOfLCIS {
      * @param nums
      * @return
      */
-    public int findLengthOfLCIS(int[] nums) {
+    public static int findLengthOfLCIS(int[] nums) {
 
         int max = 0;
-        // 初始值必须为1
+        // 初始值必须为1 // todo   为什么！！！有一个就算1
         int count = 1;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] > nums[i - 1]) {
                 count++;
             } else {
-                max = Math.max(count, max);
+                max = Math.max(count, max); // todo
                 count = 1;
             }
         }

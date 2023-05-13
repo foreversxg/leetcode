@@ -31,15 +31,12 @@ public class SearchInsertPosition {
         System.out.println(a);
     }
 
-    // 用二分查找
     public static int searchInsert(int[] nums, int target) {
-
         int left = 0;
         int right = nums.length - 1;
-        // 等于是为了处理target在两相邻数之间
-        // left right也可以被理解成双指针
-        while (left <= right) {
-            int mid = (left + right) / 2;
+        int mid = 0;
+        while (left <= right) {  // todo 为什么是 <=,因为如果left right是相邻，这时应该取left+1 = (left+right)/2+1
+            mid = (left + right) / 2;
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
@@ -47,8 +44,28 @@ public class SearchInsertPosition {
             } else {
                 right = mid - 1;
             }
-
         }
         return left;
     }
+
+    // 用二分查找
+//    public static int searchInsert(int[] nums, int target) {
+//
+//        int left = 0;
+//        int right = nums.length - 1;
+//        // 等于是为了处理target在两相邻数之间
+//        // left right也可以被理解成双指针
+//        while (left <= right) {
+//            int mid = (left + right) / 2;
+//            if (nums[mid] == target) {
+//                return mid;
+//            } else if (nums[mid] < target) {
+//                left = mid + 1;
+//            } else {
+//                right = mid - 1;
+//            }
+//
+//        }
+//        return left;
+//    }
 }

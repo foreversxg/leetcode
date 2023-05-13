@@ -34,11 +34,28 @@ import com.sxg.Understand;
 @Deprecated
 public class RemoveDuplicate {
 
+    /**
+     * 问题分解 1、有序数组找重复，重复的数肯定连续 2、去除重复后的长度，所以需要移动元素 3、去重复、移动元素 -》 快慢指针
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int res = removeDuplicates(new int[]{1, 1, 2});
-        int res2 = removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
-
+        int res1 = removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
+        int res2 = removeDuplicates2(new int[]{1, 1, 2});
+        int res3 = removeDuplicates2(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
         System.out.println(res);
+    }
+
+    public static int removeDuplicates2(int[] nums) {
+        int slow = 0;
+        for (int fast = 1; fast < nums.length; fast++) {
+            if (nums[slow] != nums[fast]) {
+                nums[++slow] = nums[fast];
+            }
+        }
+
+        return slow + 1;
     }
 
     /**
@@ -58,6 +75,4 @@ public class RemoveDuplicate {
         }
         return slowIndex + 1;
     }
-
-
 }

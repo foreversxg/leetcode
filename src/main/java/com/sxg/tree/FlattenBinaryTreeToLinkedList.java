@@ -15,12 +15,23 @@ import com.sxg.base.TreeNode;
 @Understand
 public class FlattenBinaryTreeToLinkedList {
 
+    /**
+     * 每一层只做自己层该做的事，其他层通过递归实现。但是要确保递归时衔接的节点正确
+     * <p>
+     * 1、先处理left和right节点，通过递归实现
+     * <p>
+     * 2、通过循环找到left尾结点，作为right的头结点
+     * <p>
+     * 3、root -> left -> right
+     *
+     * @param root
+     */
     public void flatten(TreeNode root) {
 
         if (root == null) {
             return;
         }
-        // 先完成各子树的展开，然后再用root关联
+        // todo 先完成各子树的展开，然后再用root关联
         //    左子树链表  -> root.val -> 右子树链表
         flatten(root.left);
         flatten(root.right);

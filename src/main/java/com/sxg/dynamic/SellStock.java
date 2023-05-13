@@ -26,6 +26,17 @@ import com.sxg.Understand;
 @Understand
 public class SellStock {
 
+    /**
+     * 问题分解
+     * <p>
+     * 1、最大利润 = 最高价 - 最低价 （如果单纯的用最大值减去最小值，可能会出现最大值在最小值之前的问题，所以只能逐步以当前结束点为最大值，寻找前面的最小值进行计算，最后统计出最大利润）
+     * <p>
+     * 2、计算每个点为结束点内的最大利润
+     * <p>
+     * 3、计算之前所有的最大利润中的最大值
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int a = maxProfit(new int[]{7, 1, 5, 3, 6, 4});
         System.out.println(a);

@@ -1,19 +1,24 @@
 package com.sxg.dance;
 
+import com.sxg.Understand;
 import com.sxg.base.ListNode;
 
 /**
  * 剑指 Offer 25. 合并两个排序的链表
  *
- * @author sxg
- * create in 2021/11/28
+ * @author sxg create in 2021/11/28
  */
+@Understand
 public class MergeTwoLists {
+
+    public static void main(String[] args) {
+        
+    }
 
     public ListNode mergeTwoLists(ListNode<Integer, Integer> l1, ListNode<Integer, Integer> l2) {
 
         // 把链表头记录下来
-        ListNode<Integer, Integer> pre = new ListNode<>(0);
+        ListNode<Integer, Integer> pre = new ListNode<>(0); // todo
         ListNode node = pre;
         while (l1 != null && l2 != null) {
             if (l1.value > l2.value) {
@@ -27,7 +32,7 @@ public class MergeTwoLists {
             node = node.next;
         }
         // 最后统一收编
-        node.next = l1 == null ? l2 : l1;
+        node.next = l1 == null ? l2 : l1; // todo,链表的骚操作
         return pre.next;
     }
 }

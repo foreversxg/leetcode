@@ -16,14 +16,28 @@ import com.sxg.base.TreeNode;
 @Understand
 public class BalancedBinaryTree {
 
+    /**
+     * 问题分解
+     * <p>
+     * 1、二叉树高度
+     * <p>
+     * 2、平衡
+     * <p>
+     * 时间复杂度？？？？？？？？？？？？？？
+     * <p>
+     * 空间复杂度？？？？？？？？？？？？？？
+     *
+     * @param root
+     * @return
+     */
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
         // 每一个节点的左右两侧高度平衡
         return Math.abs(height(root.left) - height(root.right)) <= 1
-                // 注意是每个子树都得是平衡二叉树
-                && isBalanced(root.left) && isBalanced(root.right);
+            // 注意是每个子树都得是平衡二叉树
+            && isBalanced(root.left) && isBalanced(root.right);
     }
 
     private Integer height(TreeNode root) {

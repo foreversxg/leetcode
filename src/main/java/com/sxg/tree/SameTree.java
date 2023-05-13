@@ -16,6 +16,7 @@ import com.sxg.base.TreeNode;
  * create in 2021/7/14
  */
 @Understand
+@Deprecated
 public class SameTree {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {

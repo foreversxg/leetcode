@@ -2,7 +2,6 @@ package com.sxg.tree;
 
 import com.sxg.Understand;
 import com.sxg.base.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import java.util.List;
  * create in 2021/9/5
  */
 @Understand
+@Deprecated
 public class LevelOrder {
 
 
